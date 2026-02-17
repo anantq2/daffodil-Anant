@@ -38,7 +38,7 @@ Built a Social Media Content Analyzer using React + Vite that lets users upload 
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/anantq2/daffodil-Anant
 cd daffodil-Anant
 
 # Install dependencies
