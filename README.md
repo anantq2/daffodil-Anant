@@ -34,7 +34,7 @@ A web application that extracts text from PDFs and images (via OCR) and provides
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/anantq2/daffodil-Anant
 cd daffodil-Anant
 
 # Install dependencies
