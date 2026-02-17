@@ -2,6 +2,10 @@
 
 A web application that extracts text from PDFs and images (via OCR) and provides AI-powered social media engagement improvement suggestions.
 
+## Approach Write-Up (200 words)
+
+Built a Social Media Content Analyzer using React + Vite that lets users upload PDFs and images to extract text and get AI-powered engagement suggestions. For PDF parsing, I used Mozilla's pdfjs-dist library which runs entirely in the browser. For scanned documents/images, I integrated Tesseract.js, a WebAssembly-based OCR engine that also runs client-side, ensuring user privacy since files never leave the browser. The extracted text is sent to a serverless API route (`/api/analyze`) that securely calls Google's Gemini API (free tier), so the API key is never exposed in client code. The endpoint also applies basic IP-based rate limiting to reduce repeated abuse. Gemini returns sentiment analysis, engagement scores, hashtag recommendations, and content improvement suggestions. The UI features a modern dark theme with glassmorphism effects, smooth animations, and responsive design built with Tailwind CSS. Error handling covers invalid file types, size limits, and API failures with user-friendly messages. Loading states with progress indicators keep users informed during OCR processing and AI analysis. The app is deployed on Vercel's free tier for instant, reliable hosting with automatic deployments from GitHub.
+
 ## Features
 
 - **Document Upload** - Drag-and-drop or file picker for PDFs and images (PNG, JPG, BMP, TIFF, WebP)
@@ -15,7 +19,7 @@ A web application that extracts text from PDFs and images (via OCR) and provides
 ## Tech Stack
 
 | Technology | Purpose |
-|-----------|---------|
+| ---------- | ------- |
 | React 19 + Vite 7 | Frontend framework and build tool |
 | Tailwind CSS 4 | Styling |
 | pdfjs-dist | PDF text extraction (browser-side) |
@@ -87,10 +91,6 @@ npm run preview
    - Best platform recommendation
    - Improved content version
    - Tone analysis and target audience
-
-## Approach Write-Up (200 words)
-
-Built a Social Media Content Analyzer using React + Vite that lets users upload PDFs and images to extract text and get AI-powered engagement suggestions. For PDF parsing, I used Mozilla's pdfjs-dist library which runs entirely in the browser. For scanned documents/images, I integrated Tesseract.js, a WebAssembly-based OCR engine that also runs client-side, ensuring user privacy since files never leave the browser. The extracted text is sent to a serverless API route (`/api/analyze`) that securely calls Google's Gemini API (free tier), so the API key is never exposed in client code. The endpoint also applies basic IP-based rate limiting to reduce repeated abuse. Gemini returns sentiment analysis, engagement scores, hashtag recommendations, and content improvement suggestions. The UI features a modern dark theme with glassmorphism effects, smooth animations, and responsive design built with Tailwind CSS. Error handling covers invalid file types, size limits, and API failures with user-friendly messages. Loading states with progress indicators keep users informed during OCR processing and AI analysis. The app is deployed on Vercel's free tier for instant, reliable hosting with automatic deployments from GitHub.
 
 ## Deployment
 
