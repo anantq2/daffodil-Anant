@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f1117;
+  --color-foreground: #e8e8ee;
+  --color-card: #181a24;
+  --color-card-foreground: #c8c8d4;
+  --color-primary: #14b8a6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1c1e2c;
+  --color-secondary-foreground: #a0a0b8;
+  --color-muted: #1a1c28;
+  --color-muted-foreground: #6b6b88;
+  --color-accent: #14b8a6;
+  --color-destructive: #ef4444;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.2);
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0
+  }
+
+  100% {
+    background-position: 200% 0
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up .5s cubic-bezier(.22, 1, .36, 1) both
+}
+
+.animate-fade-in {
+  animation: fade-in .4s ease both
+}
+
+/* Delay helpers */
+.delay-1 {
+  animation-delay: .1s
+}
+
+.delay-2 {
+  animation-delay: .2s
+}
+
+.delay-3 {
+  animation-delay: .3s
+}
